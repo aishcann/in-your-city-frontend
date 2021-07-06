@@ -1,22 +1,28 @@
 import './homepage.scss'
-import eventData from '../../data.json'
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom' 
 
-const HomePage = ({data}) => {
+const HomePage = () => {
+
+		const [events, setEvents] = useState([])
+
+			useEffect(() => {
+				fetch('http://localhost:8000/events/')
+					.then((res) => res.json())
+					.then((res) => {
+						setEvents(res)
+					})
+					.catch(console.error)
+					;
+			});
+
     return (
 			<div className='homePage'>
-				<section className='navbar'>
-					<Link to='/create' >
-                        <button>Share Your Event</button>
-                    </Link>
-				</section>
-				<section className='header'>
-					<h1>In Your City</h1>
-					<h3>the latest cultural events near you</h3>
-				</section>
+				<Link to='/manage'>
+					<button className='share'>Share Your Event</button>
+				</Link>
 				<section className='eventList'>
-					{eventData.map((event) => {
+					{events.map((event) => {
 						return (
 							<div className='eventInfo'>
 								<h3>{event.name}</h3>
