@@ -1,0 +1,53 @@
+@import '../../global.scss';
+
+.manageEvents{
+
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        .header {
+            background-color: $greyishWhite;
+            border: none;
+        }
+
+        div{
+            display: flex;
+            justify-content: space-between;
+            width: 150px;
+            height: 50px;
+
+            button{
+            margin-top: 5px;
+            background-color: $darkerPurple;
+            color: white;
+            border: $darkerPurple;
+            }
+        }
+
+        
+ 
+    }
+
+    .event{
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+
+        .eventInfo{
+            // height: 200px;
+            // width: 300px;
+
+            img{
+                height:30%;
+                width: 30%;
+            }
+
+            button{
+                background-color: rgb(128, 0, 128);
+                color: white;
+            }
+        }
+    }
+}

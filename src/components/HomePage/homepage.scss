@@ -1,0 +1,48 @@
+@import '../../global.scss';
+
+.homePage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+    .navbar{
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+
+        button{
+            cursor: pointer;
+        }
+    }
+
+    .header {
+        height: 20%;
+        width: 50%; 
+    }
+
+    .eventList {
+        height: 300px;
+        width: 600px;
+
+        .eventInfo {
+            background-color: $darkerPurple;
+            color: $greyishWhite;
+            margin: 30px;
+            padding: 8px;
+
+            img {
+                height: 60%;
+                width: 60%;
+            }
+
+            a{
+                text-decoration: none;
+                color: $greyishWhite;
+            }
+        }
+    }
+
+}
