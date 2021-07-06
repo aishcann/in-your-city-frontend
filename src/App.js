@@ -1,7 +1,7 @@
 import HomePage from './components/HomePage/HomePage';
-import EventDetail from './components/EventDetail/EventDetail';
+import EventDetail from './components/ManageEvents/ManageEvents';
 import LoginPage from './components/LoginPage/LoginPage';
-import ManageEvents from './components/ManageEvents/ManageEvents';
+import CreateEvents from './components/CreateEvents/CreateEvents';
 import { Route } from 'react-router-dom';
 
 const App = () => {
@@ -14,7 +14,7 @@ const App = () => {
 				render={(routerProps) => <HomePage match={routerProps.match} />}
 			/>
 			<Route
-				path='/event/:id'
+				path='/manage'
 				render={(routerProps) => <EventDetail match={routerProps.match} />}
 			/>
 			<Route
@@ -22,8 +22,8 @@ const App = () => {
 				render={(routerProps) => <LoginPage match={routerProps.match} />}
 			/>
 			<Route
-				path='/manage'
-				render={(routerProps) => <ManageEvents match={routerProps.match} />}
+				path='/create'
+				render={(routerProps) => <CreateEvents match={routerProps.match} />}
 			/>
 		</div>
 	);

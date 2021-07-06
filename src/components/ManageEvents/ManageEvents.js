@@ -1,30 +1,29 @@
 import './manageevents.scss'
-import eventData from '../../data.json';
 
 const ManageEvents = () => {
     return (
 			<div className='manageEvents'>
-				<section className='navbar'>
-					<button className='header'>In Your City</button>
-					<div>
-						<button>Manage Events</button>
-						<button>Logout</button>
-					</div>
+				<section className='header'>
+					<a href='/'>
+						<h1>In Your City</h1>
+					</a>
 				</section>
-				<section className='event'>
-					{eventData.map((event) => {
-						return (
-							<div className='eventInfo'>
-								<img src={event.image} alt={event.name} />
-								<h3>{event.name}</h3>
-								<h4>{event.date}</h4>
-								<h4>{event.time}</h4>
-								<h4>{event.location}</h4>
-								<button>Edit Event</button>
-							</div>
-						);
-					})}
-				</section>
+				<form className='editEvent'>
+					<h3>Edit Your Event</h3>
+					<p>Event Name</p>
+					<input type='text' className='text' id='name' />
+					<p>Date</p>
+					<input type='date' className='date' />
+					<p>Time</p>
+					<input type='time' className='time' />
+					<p>Location</p>
+					<input type='text' className='text' id='location' />
+					<p>Link</p>
+					<input type='url' className='text' id='link' />
+					<p>Description</p>
+					<input type='text' className='text' id='description' />
+					<button type='submit'>Edit Event</button>
+				</form>
 			</div>
 		);
 };

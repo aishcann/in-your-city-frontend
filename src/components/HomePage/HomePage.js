@@ -4,25 +4,10 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom' 
 
 const HomePage = ({data}) => {
-
-	const [logout, setLogout] = useState(false)
-
-	// const [events, setEvents] = useState([])
-
-	// useEffect(() => {
-	// 	fetch('http://localhost:8000/events/?format=api')
-	// 		.then((res) => res.json())
-	// 		.then((json) => {
-	// 			setEvents(json);
-	// 			console.log(json);
-	// 		})
-	// 		.catch(console.error);
-	// }, [])
-
     return (
 			<div className='homePage'>
 				<section className='navbar'>
-					<Link to='/manage' >
+					<Link to='/create' >
                         <button>Share Your Event</button>
                     </Link>
 				</section>
@@ -34,7 +19,6 @@ const HomePage = ({data}) => {
 					{eventData.map((event) => {
 						return (
 							<div className='eventInfo'>
-								<img src={event.image} alt={event.name} />
 								<h3>{event.name}</h3>
 								<h4>{event.date}</h4>
 								<h4>{event.time}</h4>
