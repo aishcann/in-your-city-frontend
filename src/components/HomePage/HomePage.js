@@ -6,21 +6,18 @@ const HomePage = () => {
 
 		const [events, setEvents] = useState([])
 
-			useEffect(() => {
-				fetch('http://localhost:8000/events/')
-					.then((res) => res.json())
-					.then((res) => {
-						setEvents(res)
-					})
-					.catch(console.error)
-					;
-			});
+		useEffect(() => {
+			fetch('http://localhost:8000/events/')
+				.then((res) => res.json())
+				.then((res) => {
+					setEvents(res)
+				})
+				.catch(console.error)
+				;
+		});
 
     return (
 			<div className='homePage'>
-				<Link to='/manage'>
-					<button className='share'>Share Your Event</button>
-				</Link>
 				<section className='eventList'>
 					{events.map((event) => {
 						return (

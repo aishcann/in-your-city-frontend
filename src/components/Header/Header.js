@@ -8,10 +8,20 @@ const Header = () => {
 
     return (
 			<div className='header'>
-				<a href='/'>
-					<h1> In Your City</h1>
-					<h3> the latest cultural events near you</h3>
-				</a>
+				<section className='navbar'>
+					<a href='/'>
+						<h1> In Your City</h1>
+						<h3> the latest cultural events near you</h3>
+					</a>
+					<section className='buttons'>
+						<Link to='/'>
+							<button className='home'>Home</button>
+						</Link>
+						<Link to='/manage'>
+							<button className='share'>Share Your Event</button>
+						</Link>
+					</section>
+				</section>
 			</div>
 		);
 };

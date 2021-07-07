@@ -61,13 +61,10 @@ const ManageEvents = () => {
 
     return (
 			<div className='createEvents'>
-				<Link to='/'>
-					<button className='home'>Home</button>
-				</Link>
 				{newEvent ? (
 					<form className='createEvent'>
 						<h3>Create Your Event</h3>
-						<p>Event Name</p>
+						<h4>Event Name</h4>
 						<input
 							type='text'
 							className='text'
@@ -75,11 +72,11 @@ const ManageEvents = () => {
 							onChange={handleChange}
 							value={formState.name}
 						/>
-						<p className='date-time'>
+						<h4 className='date-time'>
 							Date
 							<br />
 							YYYY-MM-DD Format
-						</p>
+						</h4>
 						<input
 							type='text'
 							className='date'
@@ -87,11 +84,11 @@ const ManageEvents = () => {
 							onChange={handleChange}
 							value={formState.date}
 						/>
-						<p className='date-time'>
+						<h4 className='date-time'>
 							Time
 							<br />
 							24HR 00:00:00 Format
-						</p>
+						</h4>
 						<input
 							type='text'
 							className='time'
@@ -99,7 +96,7 @@ const ManageEvents = () => {
 							onChange={handleChange}
 							value={formState.time}
 						/>
-						<p>Location</p>
+						<h4>Location</h4>
 						<input
 							type='text'
 							className='text'
@@ -107,7 +104,7 @@ const ManageEvents = () => {
 							onChange={handleChange}
 							value={formState.location}
 						/>
-						<p>Link</p>
+						<h4>Link</h4>
 						<input
 							type='url'
 							className='text'
@@ -115,9 +112,9 @@ const ManageEvents = () => {
 							onChange={handleChange}
 							value={formState.link}
 						/>
-						<p>Description</p>
+						<h4>Description</h4>
 						<input
-							type='text'
+							type='textarea'
 							className='text'
 							id='description'
 							onChange={handleChange}
@@ -131,13 +128,30 @@ const ManageEvents = () => {
 				{!newEvent && !deleteEvent ? (
 					<section className='eventCreated'>
 						<h3>Congrats! Here are your event details!</h3>
-						<p>Name: {formState.name}</p>
-						<p>Date: {formState.date}</p>
-						<p>Time: {formState.time}</p>
-						<p>Location: {formState.location}</p>
-						<p>Link: {formState.link}</p>
-						<p>Description: {formState.description} </p>
-						{/* <Link to='/manage'> */}
+						<p>
+							<b>Name: </b>
+							{formState.name}
+						</p>
+						<p>
+							<b>Date: </b>
+							{formState.date}
+						</p>
+						<p>
+							<b>Time: </b>
+							{formState.time}
+						</p>
+						<p>
+							<b>Location: </b>
+							{formState.location}
+						</p>
+						<p>
+							<b>Link: </b>
+							{formState.link}
+						</p>
+						<p>
+							<b>Description:</b>:
+							{formState.description}{' '}
+						</p>
 						<button
 							onClick={() => {
 								setNewEvent(true);
@@ -145,7 +159,6 @@ const ManageEvents = () => {
 							}}>
 							I want to edit my event
 						</button>
-						{/* </Link> */}
 						<button
 							onClick={() => {
 								handleClick();
@@ -153,15 +166,11 @@ const ManageEvents = () => {
 							}}>
 							I want to delete my event
 						</button>
-						<button>I want to create a new event</button>
 					</section>
 				) : null}
 				{deleteEvent ? (
 					<section className='eventDeleted'>
 						<h3> Your event was deleted.</h3>
-						<Link to='/'>
-							<button>Return Home</button>
-						</Link>
 					</section>
 				) : null}
 			</div>
