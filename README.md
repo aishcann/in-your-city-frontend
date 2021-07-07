@@ -15,6 +15,12 @@ React and Sass is used on the frontend, and Python, Django, and PostgreSQL on th
 
 You start on the homepage where you get a list of events that been shared to the site.  If you would like to share your own, you click "Share Your Event" near the top of the page. From there, you can fill in all the fields you add your event to the list. If you would like to edit or delete that information, you are given the option after submitting.
 
+## Future Developments
+
+- Sorting the events in ascending order by date
+- Not displaying any dates pass the current date 
+- Adding OAuth so that only authenticated users can add, edit, and delete events
+
 ## Contribution Guidelines
 
 If you'd like to give feedback about this project, please do so via an issue. We welcome your comments and ideas!
